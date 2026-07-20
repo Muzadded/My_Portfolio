@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Reset & Cursor Overrides ─────────────────────────── */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0b1326;
+  color: #dae2fd;
+}
+
+body {
+  background-color: #0b1326;
+  color: #dae2fd;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060e20;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d3449;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b4c5ff;
+}
+
+/* ── Design System Utilities ───────────────────────────────── */
+
+/* Glass Cards */
+.glass-card {
+  background: rgba(23, 31, 51, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(180, 197, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(45, 52, 73, 0.5);
+  border-color: rgba(180, 197, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* Work Experience timelines cards specific */
+.timeline-card {
+  background: rgba(23, 31, 51, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-card:hover {
+  border-color: rgba(180, 197, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Timeline Components */
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 15px #2563eb;
+  z-index: 10;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(180, 197, 255, 0.2) 10%, rgba(180, 197, 255, 0.2) 90%, transparent);
+}
+
+/* Card highlight borders */
+.card-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(180, 197, 255, 0.4), transparent);
+}
+
+/* Glow metrics texts */
+.metric-glow {
+  text-shadow: 0 0 20px rgba(76, 215, 246, 0.3);
+}
+
+/* Gradient Texts */
+.gradient-text {
+  background: linear-gradient(135deg, #b4c5ff 0%, #4cd7f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Technology grid background pattern */
+.tech-grid {
+  background-image: radial-gradient(circle at 2px 2px, rgba(37, 99, 235, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* Performance metrics card styles */
+.performance-metric {
+  background: linear-gradient(135deg, rgba(180, 197, 255, 0.1) 0%, rgba(76, 215, 246, 0.05) 100%);
+  transition: background 0.3s ease;
+}
+
+/* Scroll reveal items */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

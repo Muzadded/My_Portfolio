@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Work Experience | Muzadded.AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Lexend:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "error": "#ffb4ab",
+                  "outline": "#8d90a0",
+                  "on-error-container": "#ffdad6",
+                  "tertiary-fixed-dim": "#4edea3",
+                  "inverse-primary": "#0053db",
+                  "on-secondary-fixed-variant": "#004e5c",
+                  "surface-container-lowest": "#060e20",
+                  "secondary-fixed": "#acedff",
+                  "inverse-on-surface": "#283044",
+                  "on-tertiary": "#003824",
+                  "on-surface-variant": "#c3c6d7",
+                  "on-primary-container": "#eeefff",
+                  "inverse-surface": "#dae2fd",
+                  "on-secondary-container": "#00424e",
+                  "primary-container": "#2563eb",
+                  "primary-fixed-dim": "#b4c5ff",
+                  "error-container": "#93000a",
+                  "tertiary-container": "#007d55",
+                  "surface-container-highest": "#2d3449",
+                  "secondary-container": "#03b5d3",
+                  "background": "#0b1326",
+                  "on-secondary-fixed": "#001f26",
+                  "on-error": "#690005",
+                  "tertiary": "#4edea3",
+                  "on-tertiary-fixed": "#002113",
+                  "on-surface": "#dae2fd",
+                  "surface-variant": "#2d3449",
+                  "on-tertiary-container": "#bdffdb",
+                  "on-secondary": "#003640",
+                  "primary": "#b4c5ff",
+                  "outline-variant": "#434655",
+                  "on-primary": "#002a78",
+                  "surface-dim": "#0b1326",
+                  "surface-container-low": "#131b2e",
+                  "surface": "#0b1326",
+                  "surface-container-high": "#222a3d",
+                  "on-background": "#dae2fd",
+                  "tertiary-fixed": "#6ffbbe",
+                  "surface-bright": "#31394d",
+                  "secondary": "#4cd7f6",
+                  "on-tertiary-fixed-variant": "#005236",
+                  "primary-fixed": "#dbe1ff",
+                  "on-primary-fixed": "#00174b",
+                  "on-primary-fixed-variant": "#003ea8",
+                  "surface-tint": "#b4c5ff",
+                  "surface-container": "#171f33",
+                  "secondary-fixed-dim": "#4cd7f6"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "section-gap": "120px",
+                  "container-max": "1440px",
+                  "unit": "4px",
+                  "stack-md": "16px",
+                  "margin-mobile": "20px",
+                  "gutter": "16px",
+                  "stack-sm": "8px",
+                  "stack-lg": "32px"
+          },
+          "fontFamily": {
+                  "body-lg": ["Lexend"],
+                  "body-md": ["Lexend"],
+                  "display-xl": ["Lexend"],
+                  "label-caps": ["Lexend"],
+                  "headline-md": ["Lexend"],
+                  "headline-lg-mobile": ["Lexend"],
+                  "label-code": ["JetBrains Mono"],
+                  "headline-lg": ["Lexend"]
+          },
+          "fontSize": {
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "label-code": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0b1326;
+      color: #dae2fd;
+      scroll-behavior: smooth;
+    }
+    .glass-card {
+      background: rgba(23, 31, 51, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(180, 197, 255, 0.3);
+      transform: translateY(-4px);
+    }
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #2563eb;
+      box-shadow: 0 0 15px #2563eb;
+      z-index: 10;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(180, 197, 255, 0.2) 10%, rgba(180, 197, 255, 0.2) 90%, transparent);
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden bg-background text-on-background">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<div class="flex items-center gap-2 cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">memory</span>
+<span class="font-display-xl text-[24px] font-bold text-primary tracking-tighter">Muzadded.AI</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-primary underline" href="#">Work</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Papers</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-xl font-label-caps text-label-caps active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">download</span>
+      DOWNLOAD CV
+    </button>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer md:hidden">menu</span>
+</div>
+</header>
+<main class="relative pt-32 pb-section-gap px-gutter max-w-container-max mx-auto overflow-hidden">
+<!-- Header Section -->
+<section class="relative z-10 mb-stack-lg">
+<span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] mb-4 block">MY JOURNEY</span>
+<h1 class="font-display-xl text-headline-xl mb-6">Work <span class="text-primary-container">Experience</span></h1>
+<p class="max-w-2xl font-body-lg text-on-surface-variant">
+      Architecting intelligent systems through rigorous engineering. A specialized focus on Large Language Models (LLMs), RAG architectures, and autonomous agentic workflows.
+    </p>
+</section>
+<!-- Timeline Container -->
+<section class="relative z-10 mt-section-gap ml-4 md:ml-0">
+<div class="timeline-line md:left-1/2 md:-translate-x-1/2"></div>
+<!-- Experience Item 1 -->
+<div class="relative mb-stack-lg md:flex md:justify-between md:items-start group">
+<div class="md:w-[45%] mb-8 md:mb-0 md:text-right">
+<div class="inline-block px-4 py-1 rounded-full bg-primary-container/10 border border-primary/20 mb-4">
+<span class="font-label-code text-label-code text-primary">SEPT 2023 — PRESENT</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">AI &amp; Automation Engineer</h3>
+<p class="font-body-lg text-secondary mb-4">Care Guide</p>
+<div class="flex flex-wrap gap-2 md:justify-end">
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">Python</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">FastAPI</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">LangChain</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-primary-container text-on-primary-container rounded-lg">RAG</span>
+</div>
+</div>
+<div class="absolute left-[-13px] md:left-1/2 md:-translate-x-1/2 timeline-dot"></div>
+<div class="md:w-[45%] glass-card p-stack-md rounded-xl">
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<p class="font-body-md text-on-surface-variant">Designed and deployed <span class="text-on-surface font-medium">HIPAA-compliant</span> Healthcare AI systems processing sensitive patient data with zero leakage.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<p class="font-body-md text-on-surface-variant">Developed RAG-based conversational AI chatbots, improving enterprise query resolution accuracy by <span class="text-secondary font-medium">60%</span>.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<p class="font-body-md text-on-surface-variant">Built autonomous AI agentic workflows for clinical documentation automation, reducing repetitive overhead by 50%.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative mb-stack-lg md:flex md:flex-row-reverse md:justify-between md:items-start group">
+<div class="md:w-[45%] mb-8 md:mb-0">
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-container/10 border border-secondary/20 mb-4">
+<span class="font-label-code text-label-code text-secondary">JAN 2023 — SEPT 2023</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">AI &amp; Automation Engineer</h3>
+<p class="font-body-lg text-secondary mb-4">Code24 PTY LTD</p>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">IBM Watson</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">NDIS</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">GCP</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">GoHighLevel</span>
+</div>
+</div>
+<div class="absolute left-[-13px] md:left-1/2 md:-translate-x-1/2 timeline-dot"></div>
+<div class="md:w-[45%] glass-card p-stack-md rounded-xl">
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary shrink-0">bolt</span>
+<p class="font-body-md text-on-surface-variant">Engineered automated NDIS platforms to streamline participant onboarding and workforce rostering via custom API integrations.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary shrink-0">bolt</span>
+<p class="font-body-md text-on-surface-variant">Built multilingual conversational AI chatbots using <span class="text-on-surface font-medium">IBM Watsonx Assistant</span> for global client outreach.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary shrink-0">bolt</span>
+<p class="font-body-md text-on-surface-variant">Designed voice-first AI assistants integrating n8n, Retail AI, and CRM systems for real-time lead qualification.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- Experience Item 3 -->
+<div class="relative mb-stack-lg md:flex md:justify-between md:items-start group">
+<div class="md:w-[45%] mb-8 md:mb-0 md:text-right">
+<div class="inline-block px-4 py-1 rounded-full bg-tertiary-container/10 border border-tertiary/20 mb-4">
+<span class="font-label-code text-label-code text-tertiary">OCT 2022 — OCT 2023</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Undergraduate Teaching Assistant</h3>
+<p class="font-body-lg text-secondary mb-4">United International University</p>
+<div class="flex flex-wrap gap-2 md:justify-end">
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">Python</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">C/C++</span>
+<span class="font-label-code text-label-code px-3 py-1 bg-surface-container-high border border-outline-variant rounded-lg">Data Structures</span>
+</div>
+</div>
+<div class="absolute left-[-13px] md:left-1/2 md:-translate-x-1/2 timeline-dot"></div>
+<div class="md:w-[45%] glass-card p-stack-md rounded-xl">
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary shrink-0">school</span>
+<p class="font-body-md text-on-surface-variant">Led laboratory sessions for <span class="text-on-surface font-medium">Data Structures &amp; Algorithms</span> and AI-focused coding intensives.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary shrink-0">school</span>
+<p class="font-body-md text-on-surface-variant">Mentored 150+ students in Python-based machine learning fundamentals and complex problem-solving strategies.</p>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary shrink-0">school</span>
+<p class="font-body-md text-on-surface-variant">Guided undergraduate research teams in debugging large-scale neural network architectures and dataset curation.</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Project Snapshot Bento -->
+<section class="mt-section-gap z-10 relative">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-card p-stack-lg rounded-xl flex flex-col justify-between min-h-[320px]">
+<div>
+<span class="font-label-caps text-label-caps text-primary mb-2 block">LATEST MILESTONE</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">RAG Optimization</h2>
+<p class="font-body-lg text-on-surface-variant max-w-lg">Achieved a 98% accuracy rate in information retrieval for medical datasets using custom-tuned embedding models and hybrid semantic search.</p>
+</div>
+<div class="flex items-center gap-6 mt-8">
+<div>
+<div class="font-display-xl text-headline-lg text-secondary">98%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">ACCURACY</div>
+</div>
+<div>
+<div class="font-display-xl text-headline-lg text-tertiary">0.4s</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">LATENCY</div>
+</div>
+</div>
+</div>
+<div class="glass-card overflow-hidden rounded-xl h-[320px] relative group">
+<div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACo6yNVhJYRJLXxgfFZ7nga_lFnvwe8v8EcvNhfGg2u6a0IG6AGNk7cpG1fjrCrCi78HbCi7Y3bir-c4WSxB8FomB370cYRWzAJ5dt2jC_5Qf9GLtllDJkhyKG3zLheMhMA774N0rBU-O0dwBPzN8sdhtexu-nRMh2ABVsQq0VXMdZT_gMl8vk99N0OOy2ST9v_JAV5quRlPGgoTNoxg3U72qccZlH59KLF5UtNXvb4RnRy9GFFhUvFlpolF_LCvKFl8nNJ6hR2Pf4')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6 z-10">
+<h4 class="font-headline-md text-headline-md text-white">System Architecture</h4>
+<p class="font-label-caps text-label-caps text-primary mt-1">CORE EXPERTISE</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface/90 backdrop-blur-md border-t border-white/10 shadow-2xl rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-3 py-1 transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-label-caps text-[10px]">Work</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-caps text-[10px]">Projects</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-caps text-[10px]">Papers</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all duration-200 active:scale-90">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-caps text-[10px]">Contact</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-dim border-t border-white/5">
+<div class="font-label-caps text-label-caps text-primary">M.CHOWDHURY</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Md Muzadded Chowdhury. Engineered for Excellence.</p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">ResearchGate</a>
+</div>
+</footer>
+<script>
+  // Micro-interactions and entry animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.glass-card').forEach(card => {
+      card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+      observer.observe(card);
+    });
+  });
+</script>
+</body></html>
