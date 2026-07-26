@@ -6,6 +6,8 @@ import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
+import Projects from '@/components/Projects'
+import Papers from '@/components/Papers'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -44,6 +46,8 @@ export default function Home() {
         </div>
       </section>
 
+      <Projects />
+      <Papers />
       <Contact />
       <Footer />
     </div>
