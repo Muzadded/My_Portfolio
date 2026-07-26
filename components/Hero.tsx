@@ -6,7 +6,7 @@ import { PERSONAL } from '@/lib/constants'
 
 export default function Hero() {
   return (
-    <main className="relative pt-32 pb-24 overflow-hidden tech-grid min-h-screen flex items-center bg-background">
+    <main id="home" className="relative pt-32 pb-24 overflow-hidden tech-grid min-h-screen flex items-center bg-background">
       {/* Ambient background glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/5 blur-[150px] rounded-full pointer-events-none" />
