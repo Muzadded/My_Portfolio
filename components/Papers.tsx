@@ -1,78 +1,107 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
+import { motion } from 'framer-motion'
+
+interface PaperItem {
+  title: string
+  publisher: string
+  categoryTags: string[]
+  description: string
+  metricVal: string
+  metricLabel: string
+  metricPct: number
+  color: string
+  glow: string
+  borderDefault: string
+  borderHover: string
+  dotGlow: string
+  link: string
+  image: string
+}
 
 export default function Papers() {
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active')
-        }
-      })
-    }, observerOptions)
-
-    document.querySelectorAll('.scroll-reveal-papers').forEach((el) => observer.observe(el))
-
-    // Hover effect for metrics
-    const metrics = document.querySelectorAll('.performance-metric-card-element')
-    metrics.forEach((metric) => {
-      const htmlMetric = metric as HTMLElement
-      const handleMouseMove = (e: MouseEvent) => {
-        const { left, top, width, height } = htmlMetric.getBoundingClientRect()
-        const x = ((e.clientX - left) / width) * 100
-        const y = ((e.clientY - top) / height) * 100
-        htmlMetric.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(180, 197, 255, 0.15) 0%, rgba(23, 31, 51, 0.4) 70%)`
-      }
-      const handleMouseLeave = () => {
-        htmlMetric.style.background = 'linear-gradient(135deg, rgba(180, 197, 255, 0.1) 0%, rgba(76, 215, 246, 0.05) 100%)'
-      }
-
-      htmlMetric.addEventListener('mousemove', handleMouseMove)
-      htmlMetric.addEventListener('mouseleave', handleMouseLeave)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
-  const papersData = [
+  const papersData: PaperItem[] = [
     {
-      title: 'FVCM-Net: Privacy-Preserving Lung Cancer Detection from CT Images',
-      categoryTags: ['BIOMEDICAL SIGNAL PROCESSING', 'FEDERATED LEARNING'],
-      description:
-        'Federated learning-based ensemble deep learning model with explainable HiRes-CAM and SHAP attribution for decentralized lung cancer detection. Ensures data privacy while maintaining high-fidelity diagnostic performance across multiple medical institutions.',
-      publishedDate: 'PUBLISHED 2024',
-      metricVal: '98.2',
-      metricLabel: '% Accuracy',
-      progressBarWidth: '98.2%',
-      hasChartIcon: false,
+      title: 'Decentralized Medical Image Sharing using Blockchain',
+      publisher: 'IET Blockchain',
+      categoryTags: ['Blockchain', 'IPFS Storage', 'Medical Security'],
+      description: 'Proposed a privacy-preserving blockchain-based medical image sharing framework integrating subject sensitive hashing (SSH) and IPFS storage, achieving 98% data integrity accuracy across multiple healthcare imaging datasets.',
+      metricVal: '98%',
+      metricLabel: 'Integrity Acc.',
+      metricPct: 98,
+      color: 'text-[#f472b6]', // Pink theme
+      glow: 'from-[#f472b6]/5 to-transparent',
+      borderDefault: 'border-[#f472b6]/15',
+      borderHover: 'hover:border-[#f472b6]/45',
+      dotGlow: 'bg-[#f472b6]',
+      link: '#',
+      image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      title: 'FVCM-Net: Privacy-Preserved Lung Cancer Detection from CT Images',
+      publisher: 'BSPC Journal (Elsevier)',
+      categoryTags: ['Federated Learning', 'Deep Learning', 'Explainable AI'],
+      description: 'Developed a federated learning-based ensemble deep learning model with explainable HiRes-CAM and SHAP attribution for decentralized lung cancer detection, achieving 98.26% accuracy.',
+      metricVal: '98.26%',
+      metricLabel: 'Model Acc.',
+      metricPct: 98.26,
+      color: 'text-[#60a5fa]', // Blue theme
+      glow: 'from-[#60a5fa]/5 to-transparent',
+      borderDefault: 'border-[#60a5fa]/15',
+      borderHover: 'hover:border-[#60a5fa]/45',
+      dotGlow: 'bg-[#60a5fa]',
+      link: '#',
+      image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Deep Learning for Identification of Arsenic-Induced Skin Diseases',
-      categoryTags: ['IEEE', 'SKIN DISEASES'],
-      description:
-        'Attention-based CNN (ARS-CNNSA) for arsenic-induced skin condition classification, outperforming VGG16 and InceptionV3 in real-world clinical datasets.',
-      publishedDate: '',
-      metricVal: '91.0',
-      metricLabel: '% F1-Score',
-      progressBarWidth: '91%',
-      hasChartIcon: false,
+      publisher: 'IEEE',
+      categoryTags: ['Attention CNN', 'ARS-CNNSA', 'VGG16 / InceptionV3'],
+      description: 'Designed an attention-based CNN architecture (ARS-CNNSA) for classification of arsenic-induced skin conditions, outperforming standard models with 91% accuracy and 90% F1-score.',
+      metricVal: '91%',
+      metricLabel: 'F1-Score',
+      metricPct: 91,
+      color: 'text-[#34d399]', // Emerald theme
+      glow: 'from-[#34d399]/5 to-transparent',
+      borderDefault: 'border-[#34d399]/15',
+      borderHover: 'hover:border-[#34d399]/45',
+      dotGlow: 'bg-[#34d399]',
+      link: '#',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Clustering as a Catalyst for Big Data Classification (CC-BC)',
-      categoryTags: ['IEEE', 'BIG DATA'],
-      description:
-        'Clustering-driven classification framework leveraging unsupervised instance similarity to reduce labeling dependency and enhance ensemble classifiers in high-volume environments.',
-      publishedDate: '',
-      metricVal: '',
-      metricLabel: '',
-      progressBarWidth: '',
-      hasChartIcon: true,
+      publisher: 'IEEE',
+      categoryTags: ['Big Data', 'Unsupervised Learning', 'Decision Trees'],
+      description: 'Introduced a clustering-driven classification framework leveraging unsupervised instance similarity to reduce labeling dependency and enhance performance of decision tree and ensemble-based classifiers.',
+      metricVal: 'CC-BC',
+      metricLabel: 'Framework',
+      metricPct: 0,
+      color: 'text-[#a78bfa]', // Violet theme
+      glow: 'from-[#a78bfa]/5 to-transparent',
+      borderDefault: 'border-[#a78bfa]/15',
+      borderHover: 'hover:border-[#a78bfa]/45',
+      dotGlow: 'bg-[#a78bfa]',
+      link: '#',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80'
     },
+    {
+      title: 'Phishing Link Detection using Ensemble Learning',
+      publisher: 'IEEE',
+      categoryTags: ['Ensemble Learning', 'Random Forest', 'Cybersecurity'],
+      description: 'Developed an ensemble-based phishing detection system combining Random Forest, Logistic Regression, and Gradient Boosting to improve generalization and detection accuracy in cybersecurity applications.',
+      metricVal: 'Ensemble',
+      metricLabel: 'Classifiers',
+      metricPct: 0,
+      color: 'text-[#fbbf24]', // Amber theme
+      glow: 'from-[#fbbf24]/5 to-transparent',
+      borderDefault: 'border-[#fbbf24]/15',
+      borderHover: 'hover:border-[#fbbf24]/45',
+      dotGlow: 'bg-[#fbbf24]',
+      link: '#',
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80'
+    }
   ]
 
   const focusAreas = [
@@ -89,142 +118,149 @@ export default function Papers() {
       icon: 'emoji_events',
       title: 'Academic Excellence Scholarship',
       org: 'United International University',
-      borderColor: 'border-l-secondary',
-      iconColor: 'text-secondary',
+      borderColor: 'border-l-[#f472b6] border-[#f472b6]/10',
+      iconColor: 'text-[#f472b6]',
+      glow: 'from-[#f472b6]/5 to-transparent'
     },
     {
       icon: 'terminal',
       title: 'AI & Automation Unpacked Hackathon',
       org: 'IBM TechZone',
-      borderColor: 'border-l-primary',
-      iconColor: 'text-primary',
+      borderColor: 'border-l-[#60a5fa] border-[#60a5fa]/10',
+      iconColor: 'text-[#60a5fa]',
+      glow: 'from-[#60a5fa]/5 to-transparent'
     },
     {
       icon: 'workspace_premium',
       title: 'Problem Solving Intermediate',
       org: 'HackerRank Certified',
-      borderColor: 'border-l-surface-tint',
-      iconColor: 'text-surface-tint',
+      borderColor: 'border-l-[#a78bfa] border-[#a78bfa]/10',
+      iconColor: 'text-[#a78bfa]',
+      glow: 'from-[#a78bfa]/5 to-transparent'
     },
   ]
 
   return (
-    <section className="py-section-gap bg-surface relative border-t border-white/5" id="papers">
+    <section className="py-section-gap bg-surface relative border-t border-white/5 overflow-hidden" id="papers">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/3 blur-[150px] rounded-full pointer-events-none" />
+
       {/* Research Papers */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-24">
-        <div className="mb-16">
-          <span className="font-label-sm text-label-sm text-secondary-container tracking-widest uppercase font-bold">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-24 relative z-10">
+        <div className="mb-16 text-center md:text-left">
+          <span className="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold">
             Academic Contributions
           </span>
-          <h2 className="font-headline-xl text-headline-lg-mobile md:text-headline-xl mt-4 max-w-3xl text-on-surface">
+          <h2 className="font-display-xl text-[36px] md:text-[50px] leading-[1.1] text-on-surface uppercase tracking-tight mt-4">
             Research &amp; Publications
           </h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl opacity-80 leading-relaxed">
-            Engineered solutions at the intersection of Federated Learning, Privacy-Preserving AI, and Medical Diagnosis. Focusing on efficiency metrics and scalable architecture.
+          <p className="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl opacity-80 leading-relaxed mx-auto md:mx-0">
+            Engineered solutions at the intersection of Federated Learning, Privacy-Preserving AI, and Medical Diagnosis. Focusing on efficiency metrics and scalable architectures.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8">
+        {/* Balanced Vertical Grid (centering second row overflow items) */}
+        <div className="flex flex-wrap justify-center gap-8 w-full">
           {papersData.map((paper, index) => (
-            <div
-              key={index}
-              className="glass-card p-8 rounded-xl flex flex-col md:flex-row gap-8 items-start scroll-reveal-papers border border-white/5"
+            <motion.div
+              key={paper.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className={`glass-card rounded-3xl overflow-hidden border ${paper.borderDefault} ${paper.borderHover} bg-gradient-to-b from-[#171f33]/40 to-[#0b1326]/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between group w-full md:w-[calc(50%-16px)] lg:w-[calc(33.33%-22px)] min-h-[460px]`}
             >
-              <div className="flex-1">
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {paper.categoryTags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-surface-container text-primary font-label-code text-label-code px-3 py-1 rounded-sm border border-outline-variant uppercase text-xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="font-headline-lg text-title-md text-on-surface mb-4 font-semibold">
-                  {paper.title}
-                </h3>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-6 opacity-85 leading-relaxed">
-                  {paper.description}
-                </p>
-                <div className="flex items-center gap-4">
-                  <a
-                    className="font-label-md text-label-md text-primary flex items-center gap-2 hover:underline uppercase text-xs font-bold"
-                    href="#"
-                  >
-                    <span className="material-symbols-outlined text-sm">description</span> READ
-                    PAPER
-                  </a>
-                  {paper.publishedDate && (
-                    <>
-                      <span className="text-white/10">|</span>
-                      <span className="font-label-md text-label-md text-on-surface-variant text-xs uppercase">
-                        {paper.publishedDate}
-                      </span>
-                    </>
-                  )}
-                </div>
+              {/* Header Image Cover */}
+              <div className="relative aspect-[16/10] overflow-hidden w-full border-b border-white/5">
+                <img
+                  src={paper.image}
+                  alt={paper.title}
+                  className="w-full h-full object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700"
+                />
+                {/* Visual shadow overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b1326]/90 to-transparent" />
+                
+                {/* Floating Publisher Tag */}
+                <span className="absolute top-4 left-4 bg-[#0b1326]/85 backdrop-blur-md border border-white/10 text-white/90 px-3.5 py-1 rounded-full font-label-code text-[10px] font-bold uppercase tracking-wider">
+                  {paper.publisher}
+                </span>
               </div>
 
-              {/* Right Metric Card */}
-              {paper.hasChartIcon ? (
-                <div className="md:w-64 w-full h-[140px] flex items-center justify-center performance-metric performance-metric-card-element p-6 rounded-lg border border-primary/10 opacity-60">
-                  <span className="material-symbols-outlined text-headline-xl text-secondary text-5xl">
-                    analytics
+              {/* Card Body */}
+              <div className="p-6 flex flex-col justify-between flex-grow text-left">
+                <div>
+                  {/* Category sub-hashtags */}
+                  <div className="flex flex-wrap gap-2 mb-3.5">
+                    {paper.categoryTags.map((tag) => (
+                      <span key={tag} className={`text-[9.5px] ${paper.color} font-label-code uppercase tracking-wider font-extrabold`}>
+                        #{tag.replace(/\s+/g, '')}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Headline Title */}
+                  <h3 className="font-headline-lg text-[16px] md:text-[17px] text-on-surface font-extrabold leading-snug tracking-wide uppercase group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                    {paper.title}
+                  </h3>
+
+                  {/* Description text */}
+                  <p className="font-body-md text-xs md:text-sm text-on-surface-variant/90 leading-relaxed mt-3 line-clamp-3">
+                    {paper.description}
+                  </p>
+                </div>
+
+                {/* Card Footer */}
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                  <a
+                    href={paper.link}
+                    className={`inline-flex items-center gap-1.5 text-[11px] font-label-caps font-extrabold uppercase tracking-wider ${paper.color} hover:underline`}
+                  >
+                    Read Paper <span className="material-symbols-outlined text-[13px]">arrow_outward</span>
+                  </a>
+                  
+                  <span className="font-label-code text-[10px] text-on-surface-variant font-bold uppercase tracking-wide">
+                    {paper.metricPct > 0 ? `${paper.metricLabel.split(' ')[0]}: ${paper.metricVal}` : paper.metricVal}
                   </span>
                 </div>
-              ) : (
-                <div className="md:w-64 w-full h-[140px] flex flex-col justify-between performance-metric performance-metric-card-element p-6 rounded-lg border border-primary/10">
-                  <div>
-                    <div className="font-headline-xl text-secondary text-4xl font-bold leading-none">
-                      {paper.metricVal}
-                    </div>
-                    <div className="font-label-sm text-label-sm text-on-surface-variant uppercase text-xs mt-1">
-                      {paper.metricLabel}
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <div className="w-full bg-surface-container h-1 rounded-full overflow-hidden">
-                      <div
-                        className="bg-secondary h-full"
-                        style={{ width: paper.progressBarWidth }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Education */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 scroll-reveal-papers mt-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-32 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <span className="font-label-sm text-label-sm text-secondary-container tracking-widest uppercase font-bold">
+          <div className="text-left">
+            <span className="font-label-sm text-label-sm text-primary tracking-widest uppercase font-bold">
               Foundation
             </span>
-            <h3 className="font-headline-xl text-headline-lg-mobile md:text-headline-xl mt-4 text-on-surface">
+            <h3 className="font-display-xl text-[28px] md:text-[40px] uppercase tracking-tight mt-4 text-on-surface">
               My Education
             </h3>
           </div>
-          <div className="hidden md:block h-px flex-1 mx-12 bg-white/10 mb-4"></div>
+          <div className="hidden md:block h-[1px] flex-1 mx-12 bg-white/10 mb-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
           {/* Campus Image */}
           <div className="lg:col-span-5">
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
-              <div className="relative aspect-video rounded-xl overflow-hidden glass-card border border-white/10">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative group"
+            >
+              <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl blur-lg opacity-50 group-hover:opacity-100 transition duration-500"></div>
+              <div className="relative aspect-video rounded-3xl overflow-hidden glass-card border border-white/10 shadow-2xl">
                 <img
                   alt="University Campus representation"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDcsLIulxJ7C_nyrEdyQ_wy06Pe8F_AOAm_vcMoqKp8ywGtTO-LHGfGMvmm08YbuGFvo594Pt892qDJuQoJnCRV9WDToYFNjXSaCc9DuiDsi6N7odEUg_4NwPytJ3y4EnNubF-CDfG6KMDbT-T_0AVyun3AyXNElcrAa1x9Aiv3ECa2NUpJ-wBzbkXJjAYkkC7dlDpLI6xEVp2tckfstr4xv0UZe7_BhbFjyrVVamXLc8BbAk1t4YfaS_eKFLzeU-_K6gIfA9Xh6hx"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  src="/2-1-1024x486.jpg"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* School Details */}
@@ -232,48 +268,50 @@ export default function Papers() {
             <div className="space-y-10">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-4">
-                  <span className="material-symbols-outlined text-primary text-4xl">school</span>
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                    <span className="material-symbols-outlined text-2xl">school</span>
+                  </div>
                   <div>
-                    <h4 className="font-headline-lg text-title-md text-on-surface font-semibold">
+                    <h4 className="font-headline-lg text-[20px] md:text-[24px] text-on-surface font-extrabold uppercase tracking-wide">
                       United International University
                     </h4>
-                    <p className="font-label-md text-label-md text-secondary-container uppercase text-xs">
+                    <p className="font-label-md text-label-md text-secondary font-bold mt-1 uppercase text-xs">
                       Bsc in Computer Science &amp; Engineering
                     </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-8 mt-4">
-                  <div className="p-6 rounded-lg bg-surface-container/50 border border-white/5">
-                    <p className="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase text-xs">
+                  <div className="p-6 rounded-2xl bg-[#171f33]/40 border border-white/5 hover:border-primary/20 transition-all">
+                    <p className="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase text-xs font-bold tracking-wider">
                       GPA
                     </p>
-                    <p className="font-headline-xl text-primary text-[32px] font-bold">
+                    <p className="font-headline-xl text-primary text-[32px] font-extrabold">
                       3.67{' '}
                       <span className="text-body-md font-normal text-on-surface-variant text-sm">
                         / 4.00
                       </span>
                     </p>
                   </div>
-                  <div className="p-6 rounded-lg bg-surface-container/50 border border-white/5">
-                    <p className="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase text-xs">
+                  <div className="p-6 rounded-2xl bg-[#171f33]/40 border border-white/5 hover:border-primary/20 transition-all">
+                    <p className="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase text-xs font-bold tracking-wider">
                       Graduated
                     </p>
-                    <p className="font-headline-xl text-primary text-[32px] font-bold">
+                    <p className="font-headline-xl text-primary text-[30px] md:text-[32px] font-extrabold">
                       OCT 2024
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <h5 className="font-label-md text-label-md text-on-surface mb-4 uppercase text-xs font-bold">
+                  <h5 className="font-label-md text-label-md text-on-surface mb-4 uppercase text-xs font-extrabold tracking-wider">
                     Core Focus Areas
                   </h5>
                   <div className="flex flex-wrap gap-2">
                     {focusAreas.map((area) => (
                       <span
                         key={area}
-                        className="font-label-code text-label-code bg-surface-container px-3 py-1.5 rounded border border-white/5 text-on-surface-variant text-xs"
+                        className="font-label-code text-label-code bg-[#171f33]/40 px-3 py-1.5 rounded-xl border border-white/5 text-on-surface-variant text-[11.5px] hover:text-on-surface hover:border-white/20 transition-all cursor-default select-none"
                       >
                         {area}
                       </span>
@@ -287,25 +325,31 @@ export default function Papers() {
       </div>
 
       {/* Certifications */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-32 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {credentials.map((cred, index) => (
-            <div
-              key={index}
-              className={`glass-card p-8 rounded-xl flex flex-col justify-between min-h-[200px] border-l-4 ${cred.borderColor} border border-white/5 scroll-reveal-papers`}
+            <motion.div
+              key={cred.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`glass-card p-8 rounded-3xl flex flex-col justify-between min-h-[220px] border-l-4 ${cred.borderColor} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl relative overflow-hidden group`}
             >
-              <div>
-                <span className={`material-symbols-outlined ${cred.iconColor} text-3xl mb-4`}>
+              <div className={`absolute -inset-4 bg-gradient-to-br ${cred.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none`} />
+              
+              <div className="relative z-10 text-left">
+                <span className={`material-symbols-outlined ${cred.iconColor} text-4xl mb-4 block`}>
                   {cred.icon}
                 </span>
-                <h3 className="font-headline-lg text-title-md leading-tight text-on-surface font-semibold text-lg">
+                <h3 className="font-headline-lg text-[17px] md:text-[18px] leading-snug text-on-surface font-extrabold uppercase tracking-wide">
                   {cred.title}
                 </h3>
               </div>
-              <p className="font-label-sm text-label-sm text-on-surface-variant uppercase text-xs mt-4">
+              <p className="font-label-sm text-label-sm text-on-surface-variant uppercase text-xs font-bold tracking-wider mt-4 relative z-10 text-left">
                 {cred.org}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
