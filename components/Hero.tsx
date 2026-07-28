@@ -49,8 +49,9 @@ export default function Hero() {
     const handleResize = () => {
       const w = window.innerWidth
       if (w < 640) {
-        setRadiusX(w * 0.40) // Mobile: ellipse width fits screen bounds
-        setRadiusY(w * 0.32) // Mobile: ellipse height is slightly squashed
+        const rx = Math.min(w * 0.40, (w - 76) / 2)
+        setRadiusX(rx)
+        setRadiusY(rx * 0.8)
       } else if (w < 768) {
         setRadiusX(185 * 1.25) // Small tablet
         setRadiusY(185 * 0.95)
