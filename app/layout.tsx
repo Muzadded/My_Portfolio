@@ -24,24 +24,24 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Md Muzadded Chowdhury — AI & Automation Engineer',
+  title: 'Md Muzadded Chowdhury — AI Automation & Fullstack Engineer',
   description:
-    'Portfolio of Md Muzadded Chowdhury — AI & Automation Engineer specializing in LLMs, RAG systems, agentic workflows, and scalable AI automation. Based in Dhaka, Bangladesh.',
+    'Portfolio of Md Muzadded Chowdhury — AI Automation & Fullstack Engineer specializing in React, Node.js, FastAPI, agentic workflows, RAG systems, and cloud deployments.',
   keywords: [
-    'AI Engineer', 'LLM', 'RAG', 'LangChain', 'Automation', 'Machine Learning',
-    'FastAPI', 'Python', 'Portfolio', 'Muzadded Chowdhury',
+    'AI Engineer', 'Fullstack Developer', 'React', 'Node.js', 'LLM', 'RAG', 'LangChain',
+    'Automation', 'FastAPI', 'Python', 'Portfolio', 'Muzadded Chowdhury',
   ],
   authors: [{ name: 'Md Muzadded Chowdhury', url: 'mailto:muzaddedchowdhury@gmail.com' }],
   openGraph: {
-    title: 'Md Muzadded Chowdhury — AI & Automation Engineer',
-    description: 'Portfolio of Md Muzadded Chowdhury, AI & Automation Engineer.',
+    title: 'Md Muzadded Chowdhury — AI Automation & Fullstack Engineer',
+    description: 'Portfolio of Md Muzadded Chowdhury, AI Automation & Fullstack Engineer.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Md Muzadded Chowdhury — AI & Automation Engineer',
-    description: 'Portfolio of Md Muzadded Chowdhury, AI & Automation Engineer.',
+    title: 'Md Muzadded Chowdhury — AI Automation & Fullstack Engineer',
+    description: 'Portfolio of Md Muzadded Chowdhury, AI Automation & Fullstack Engineer.',
   },
 }
 
