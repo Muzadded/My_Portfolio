@@ -1,13 +1,13 @@
 // ─── Personal ────────────────────────────────────────────────────────────────
 export const PERSONAL = {
   name:     'Md Muzadded Chowdhury',
-  title:    'AI & Automation Engineer',
+  title:    'AI Automation & Fullstack Engineer',
   email:    'muzaddedchowdhury@gmail.com',
   phone:    '+880 1931 117218',
   location: 'Dhaka, Bangladesh',
   github:   'https://github.com',
   linkedin: 'https://linkedin.com',
-  bio: 'AI & Automation Engineer with 1+ years of experience developing scalable AI systems using LLMs, RAG, and agentic workflows. Skilled in building multilingual chatbots, AI-driven tools, and document intelligence platforms. Proficient in FastAPI, vector databases, and GCP. Experienced in Docker-based deployment, improving efficiency by up to 70%. Authored 5 research papers on blockchain, federated learning, and cybersecurity.',
+  bio: 'AI Automation & Fullstack Engineer with 1+ years of experience developing scalable AI systems and web applications using LLMs, RAG, agentic workflows, and modern web tech. Skilled in React.js, Node.js, FastAPI, PostgreSQL, and GCP. Proficient in building document intelligence platforms, custom microservices, and AI-driven automation pipelines. Experienced in Docker-based deployment, improving efficiency by up to 70%. Authored 5 research papers on blockchain, federated learning, and cybersecurity.',
   typedPhrases: [
     'AI Engineer',
     'LLM Developer',
