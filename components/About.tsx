@@ -18,7 +18,7 @@ export default function About() {
               <img
                 className="w-full h-full object-cover"
                 alt="A professional studio portrait of Md Muzadded Chowdhury"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdNkV7AFtf1AejT7LCEZvDuLZZ4zmLtqDUjYOxDOMWZNzDGx7rQwKr49nQbkLOyhNv9nNb24vqWClMfNe3xtx1Y0lwvvAXAHWwc29Xfu3UOBpi6qOLxR5qmw5-Dcjq3ysaBhctMFWgAjgznt-4qgrt1kRrx19IiYW8qJQqBs_3eVm11qweG-dg84H9IJk7KRPvR4t6aJategEoUpKIP6kJa16p0i6BvsXce2iL_GbxpOYu4taVB1SWfxxYTq9qeB31qzX5L0RpunoB"
+                src="/profile.jpg"
               />
             </div>
             <div className="absolute bottom-10 right-6 sm:right-12 glass-card p-6 rounded-2xl flex flex-col items-center animate-float">
@@ -35,7 +35,7 @@ export default function About() {
               GET TO KNOW
             </span>
             <h2 className="font-headline-lg text-headline-lg text-on-surface mb-8">
-              AI &amp; Automation Engineer
+              AI Automation &amp; Fullstack Engineer
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant mb-10 opacity-90 leading-relaxed">
               I am a dedicated AI professional with a focus on scalable automation and generative intelligence. My expertise lies in designing agentic workflows that transform complex data into actionable insights. Having authored multiple research papers in blockchain and federated learning, I bring a rigorous analytical approach to every deployment.
