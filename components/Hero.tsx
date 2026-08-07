@@ -270,7 +270,7 @@ export default function Hero() {
             Say Hello <span className="material-symbols-outlined text-base">send</span>
           </Link>
           <Link
-            href="/work"
+            href="#projects"
             className="border border-outline-variant text-on-surface px-8 py-4 font-label-caps text-label-sm rounded-xl hover:bg-white/5 active:scale-95 transition-all uppercase font-bold tracking-wider"
           >
             View Work
@@ -302,6 +302,15 @@ export default function Hero() {
           className="text-on-surface-variant hover:text-primary transition-all active:scale-90"
         >
           <span className="material-symbols-outlined text-2xl">layers</span>
+        </a>
+        <a
+          href={PERSONAL.researchgate || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-on-surface-variant hover:text-primary transition-all active:scale-90"
+          title="ResearchGate"
+        >
+          <span className="material-symbols-outlined text-2xl">school</span>
         </a>
       </div>
     </main>

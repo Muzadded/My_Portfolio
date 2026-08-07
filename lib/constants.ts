@@ -5,8 +5,9 @@ export const PERSONAL = {
   email:    'muzaddedchowdhury@gmail.com',
   phone:    '+880 1931 117218',
   location: 'Dhaka, Bangladesh',
-  github:   'https://github.com',
-  linkedin: 'https://linkedin.com',
+  github:   'https://github.com/Muzadded',
+  linkedin: 'https://www.linkedin.com/in/muzadded-chowdhury',
+  researchgate: 'https://www.researchgate.net/profile/Md-Chowdhury-123?ev=hdr_xprf',
   bio: 'AI Automation & Fullstack Engineer with 1+ years of experience developing scalable AI systems and web applications using LLMs, RAG, agentic workflows, and modern web tech. Skilled in React.js, Node.js, FastAPI, PostgreSQL, and GCP. Proficient in building document intelligence platforms, custom microservices, and AI-driven automation pipelines. Experienced in Docker-based deployment, improving efficiency by up to 70%. Authored 5 research papers on blockchain, federated learning, and cybersecurity.',
   typedPhrases: [
     'AI Engineer',

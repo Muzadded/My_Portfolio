@@ -32,7 +32,9 @@ export default function Footer() {
           GitHub
         </a>
         <a
-          href="#"
+          href={PERSONAL.researchgate || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
           className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors uppercase font-bold tracking-widest"
         >
           ResearchGate
